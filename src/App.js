@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react'
+import { DataStore } from '@aws-amplify/datastore';
+import { RecipeBook } from './models';
+
+import { ChakraProvider, Text } from "@chakra-ui/react"
+import CreateRecipeBook from './CreateRecipeBook';
 
 function App() {
+  const [recipeBooks, setRecipeBooks] = useState([])
+
+  useEffect(() => {
+    const pullData = async () => {
+      const recipeBookData = await DataStore.query(RecipeBook)
+      setRecipeBooks(recipeBookData)
+    }
+    pullData()
+
+    const subscription = DataStore.observe(RecipeBook).subscribe(msg => {
+      pullData()
+    })
+
+    return subscription.unsubscribe()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      {recipeBooks.map(recipeBook => <Text fontSize="4xl" key={recipeBook.id}>{recipeBook.title}</Text>)}
+      <CreateRecipeBook />
+    </ChakraProvider>
   );
 }
 

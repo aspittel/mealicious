@@ -1,0 +1,44 @@
+{
+    "staging": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-mealicious-staging-175436-authRole",
+            "UnauthRoleArn": "arn:aws:iam::033205456844:role/amplify-mealicious-staging-175436-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::033205456844:role/amplify-mealicious-staging-175436-authRole",
+            "Region": "ca-central-1",
+            "DeploymentBucketName": "amplify-mealicious-staging-175436-deployment",
+            "UnauthRoleName": "amplify-mealicious-staging-175436-unauthRole",
+            "StackName": "amplify-mealicious-staging-175436",
+            "StackId": "arn:aws:cloudformation:ca-central-1:033205456844:stack/amplify-mealicious-staging-175436/5172fb50-97ca-11eb-b412-0e9e5871025e",
+            "AmplifyAppId": "dchvycpv797p8"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "dchvycpv797p8",
+                    "type": "manual"
+                }
+            }
+        }
+    },
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-mealicious-dev-90937-authRole",
+            "UnauthRoleArn": "arn:aws:iam::000691573582:role/amplify-mealicious-dev-90937-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::000691573582:role/amplify-mealicious-dev-90937-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-mealicious-dev-90937-deployment",
+            "UnauthRoleName": "amplify-mealicious-dev-90937-unauthRole",
+            "StackName": "amplify-mealicious-dev-90937",
+            "StackId": "arn:aws:cloudformation:us-east-1:000691573582:stack/amplify-mealicious-dev-90937/605aec90-ace2-11eb-9297-0eba1c1b0c34",
+            "AmplifyAppId": "d2ue6xq209n52f"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d2ue6xq209n52f",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

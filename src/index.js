@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { Amplify } from 'aws-amplify'
+import config from './aws-exports'
+
+Amplify.configure(config)
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -15,3 +20,8 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// 2. As a user, I want to create Recipe Books
+// 3. As a user, I want to add recipes to the Recipe book
+// 4. As a user, I want to be able to rate each recipe within the recipe book
+
